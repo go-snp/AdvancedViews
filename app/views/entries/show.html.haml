@@ -1,0 +1,22 @@
+%h3
+  = @blog.title
+
+%p
+  %strong<
+    Title:
+  = @entry.title
+  %br
+  %strong<
+    Body:
+  = @entry.body
+
+= link_to 'Edit', edit_entry_path
+|
+= link_to 'Back', @blog
+
+%border
+
+%h2<
+  Listing Comments
+
+以下、未実装です
