@@ -19,6 +19,18 @@ class EntriesController < ApplicationController
 
   end
 
+  def edit
+  end
+
+  def update
+
+    if @entry.update(entry_params)
+      redirect_to blog_entry_path(@blog, @entry), notice: 'Entry was successfully updated.'
+    else
+      render :edit
+    end
+  end
+
   private
 
     def set_entry_and_blog

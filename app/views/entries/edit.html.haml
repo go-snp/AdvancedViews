@@ -1,0 +1,10 @@
+%h1<
+  Editing entry
+%h2<
+  Blog:
+  = @blog.title
+
+= render 'form', entry: @entry, blog: @blog
+
+= link_to 'Show', blog_entry_path(@blog, @entry)
+= link_to 'Back', blog_path(@blog)
