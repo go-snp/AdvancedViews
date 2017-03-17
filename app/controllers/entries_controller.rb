@@ -31,6 +31,11 @@ class EntriesController < ApplicationController
     end
   end
 
+  def destroy
+    @entry.destroy
+    redirect_to blog_path(@blog), notice: "Entry was successfully destroyed."
+  end
+
   private
 
     def set_entry_and_blog
