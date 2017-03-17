@@ -1,0 +1,7 @@
+%h2<
+  New entry:
+  = @blog.title
+
+= render 'form', entry: @entry
+
+= link_to 'Back', @blog
