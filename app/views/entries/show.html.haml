@@ -19,4 +19,25 @@
 %h2<
   Listing Comments
 
-以下、未実装です
+%table
+  %thead
+  %tbody
+    - @comments.each do |comment|
+      %tr
+        %td
+          - if comment.status == "approved"
+            = comment.body
+          - elsif comment.status == "unapproved"
+            （承認待ち）
+          - else
+            ERROR:statusの値が異常です→
+            = comment.status
+        %td
+          - if comment.status == "unapproved"
+            =  link_to 'Approve', blog_entry_comment_approve_path(@blog, @entry, comment), method: :patch
+        %td
+          = link_to 'Destroy', blog_entry_comment_path(@blog, @entry, comment), method: :delete, data: { confirm: 'Are you sure?' }
+
+%h2<
+  New comment
+= render 'comment_form', blog: @blog, entry: @entry

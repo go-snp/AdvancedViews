@@ -2,6 +2,7 @@ class EntriesController < ApplicationController
   before_action :set_entry_and_blog, only: [:show, :new, :create, :edit, :update, :destroy]
 
   def show
+    @comments = @entry.comments
   end
 
   def new
