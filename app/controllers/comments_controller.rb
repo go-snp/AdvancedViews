@@ -5,6 +5,9 @@ class CommentsController < ApplicationController
     @comment = @entry.comments.new(comment_params)
     @comment.status = "unapproved"
 
+    # メール送信
+    CommentMailer.sendmail(@blog, @entry, @comment).deliver
+
     @comment.save
     redirect_to blog_entry_path(@blog, @entry)
 
