@@ -35,6 +35,10 @@ gem 'jbuilder', '~> 2.5'
 # haml
 gem 'haml-rails'
 
+# rspec
+gem "rspec"
+gem "rspec-rails"
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
